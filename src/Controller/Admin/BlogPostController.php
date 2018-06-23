@@ -5,10 +5,15 @@ namespace App\Controller\Admin;
 use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Utils\Slugger;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * @Route("/admin")
@@ -16,28 +21,51 @@ use Symfony\Component\Routing\Annotation\Route;
 class BlogPostController extends Controller
 {
     /**
-     * @Route("/all", name="admin_index", methods="GET")
+     * @Route("/", name="admin_index", methods="GET")
      */
-    public function index(PostRepository $postRepository): Response
+    public function index(PostRepository $posts): Response
     {
-        return $this->render('admin/index.html.twig', ['posts' => $postRepository->findAll()]);
+        $authorPosts = $posts->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+
+        return $this->render('admin/index.html.twig', ['posts' => $authorPosts]);
     }
 
     /**
-     * @Route("/new", name="post_new", methods="GET|POST")
+     * @Route("/posts/{slug}", name="post_show", methods="GET")
+     */
+    public function show(Post $post): Response
+    {
+        $this->denyAccessUnlessGranted('show', $post, 'Posts can only be shown to their authors.');
+        return $this->render('admin/show.html.twig', ['post' => $post]);
+    }
+
+    /**
+     * @Route("/new", name="admin_post_new", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
         $post = new Post();
-        $form = $this->createForm(PostType::class, $post);
+        $post->setAuthor($this->getUser());
+
+        $form = $this->createForm(PostType::class, $post)
+        ->add('saveAndCreateNew', SubmitType::class);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $post->setSlug(Slugger::slugify($post->getTitle()));
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('post_index');
+            $this->addFlash('success', 'post.created_successfully');
+
+            if ($form->get('saveAndCreateNew')->isClicked()) {
+                return $this->redirectToRoute('admin_post_new');
+            }
+
+            return $this->redirectToRoute('admin_index');
         }
 
         return $this->render('admin/new.html.twig', [
@@ -49,35 +77,45 @@ class BlogPostController extends Controller
 
     /**
      * @Route("/{id}/edit", name="post_edit", methods="GET|POST")
+     *  @Security("is_granted('delete', post)")
      */
     public function edit(Request $request, Post $post): Response
     {
+        $this->denyAccessUnlessGranted('edit', $post, 'Posts can only be edited by their authors.');
+
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $post->setSlug(Slugger::slugify($post->getTitle()));
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'post.updated_successfully');
 
             return $this->redirectToRoute('post_edit', ['id' => $post->getId()]);
         }
 
-        return $this->render('post/edit.html.twig', [
+        return $this->render('admin/edit.html.twig', [
             'post' => $post,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="post_delete", methods="DELETE")
+     * @Route("/{id}/delete", name="post_delete", methods="DELETE")
      */
     public function delete(Request $request, Post $post): Response
     {
         if ($this->isCsrfTokenValid('delete'.$post->getId(), $request->request->get('_token'))) {
+            return $this->redirectToRoute('admin_post_index');
+        }
+            $post->getTags()->clear();
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($post);
             $em->flush();
-        }
+        $this->addFlash('success', 'post.deleted_successfully');
 
-        return $this->redirectToRoute('post_index');
+        return $this->redirectToRoute('admin_post_index');
     }
 }

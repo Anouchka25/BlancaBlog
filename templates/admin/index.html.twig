@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %}Adminitration{% endblock %}
 
 {% block body %}
     <h1>Adminitration du blog</h1>
@@ -25,8 +25,9 @@
                 <td>{{ post.summary }}</td>
                 <td>{{ post.content }}</td>
                 <td>
+                    <a href="{{ path('post_show', {slug: post.slug}) }}">show</a>
                     <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
-                    <a href="{{ path('post_delete', {'id': post.id}) }}">Delete</a>
+                    <a href="{{ path('post_delete', {'id': post.id}) }}">delete</a>
                 </td>
             </tr>
         {% else %}
@@ -37,11 +38,7 @@
         </tbody>
     </table>
 
-    {% if posts.haveToPaginate %}
-        <div class="navigation text-center">
-            {{ pagerfanta(posts, 'twitter_bootstrap3_translated', {routeName: 'blog_index_paginated'}) }}
-        </div>
-    {% endif %}
 
-    <a href="{{ path('post_new') }}">Create new</a>
+
+    <a href="{{ path('admin_post_new') }}">Create new</a>
 {% endblock %}

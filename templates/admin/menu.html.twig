@@ -11,17 +11,17 @@
                     <a class="nav-link" href="{{ path('post_index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('post_index') }}">About</a>
+                    <a class="nav-link" href="{{ path('post_index') }}">liste des posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('post_index') }}">Sample Post</a>
+                    <a class="nav-link" href="{{ path('post_index') }}">Creer un post</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('post_index') }}">Contact</a>
+                    <a class="nav-link" href="{{ path('post_index') }}">Inscription</a>
                 </li>
-                {% if is_granted('ROLE_ADMIN') %}
-                    {% include 'admin/menu.html.twig' %}
-                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('post_index') }}">Connexion</a>
+                </li>
             </ul>
         </div>
     </div>
