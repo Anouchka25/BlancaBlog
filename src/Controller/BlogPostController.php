@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Entity\Post;
+use App\Entity\User;
 use App\Events;
 use App\Form\CommentType;
 use App\Repository\PostRepository;

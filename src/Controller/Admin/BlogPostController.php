@@ -23,11 +23,11 @@ class BlogPostController extends Controller
     /**
      * @Route("/", name="admin_index", methods="GET")
      */
-    public function index(PostRepository $posts): Response
+    public function index(PostRepository $postRepository): Response
     {
-        $authorPosts = $posts->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        //$authorPosts = $posts->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
 
-        return $this->render('admin/index.html.twig', ['posts' => $authorPosts]);
+        return $this->render('admin/index.html.twig', ['posts' => $postRepository->findAll()]);
     }
 
     /**
@@ -35,7 +35,7 @@ class BlogPostController extends Controller
      */
     public function show(Post $post): Response
     {
-        $this->denyAccessUnlessGranted('show', $post, 'Posts can only be shown to their authors.');
+        //$this->denyAccessUnlessGranted('show', $post, 'Posts can only be shown to their authors.');
         return $this->render('admin/show.html.twig', ['post' => $post]);
     }
 

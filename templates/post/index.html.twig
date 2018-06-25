@@ -18,7 +18,7 @@
                     </h3>
                 </a>
                 <p class="post-meta">Posted by
-                    <a href="#">{{ post.author.fullName }}</a>
+                    <a href="{{ path('user_show', {'id': post.author.id}) }}">{{ post.author.fullName }}</a>
             </div>
             <hr>
             {% else %}
