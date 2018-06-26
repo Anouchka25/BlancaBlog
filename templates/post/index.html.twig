@@ -9,25 +9,26 @@
             <div class="post-preview">
                 <a href="post.html">
                     <h2 class="post-title">
-                        <a href="{{ path('post_show', {slug: post.slug}) }}">
-                            {{ post.title }}
-                        </a>
+                        <a href="{{ path('post_show', {slug: post.slug}) }}">{{ post.title }}</a>
                     </h2>
-                    <h3 class="post-subtitle">
+                    <p class="post-subtitle">
                         {{ post.summary|md2html }}
-                    </h3>
+                    </p>
                 </a>
                 <p class="post-meta">Posted by
                     <a href="{{ path('user_show', {'id': post.author.id}) }}">{{ post.author.fullName }}</a>
+                    le {{ post.publishedAt|localizeddate('medium', 'short', null, 'UTC') }}
             </div>
             <hr>
             {% else %}
                 <div class="well">{{ 'post.no_posts_found'|trans }}</div>
             {% endfor %}
 
-            <div class="clearfix">
-                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-            </div>
+                {% if posts.haveToPaginate %}
+                    <div class="navigation text-center clearfix">
+                        {{ pagerfanta(posts, 'twitter_bootstrap3_translated', {routeName: 'blog_index_paginated'}) }}
+                    </div>
+                {% endif %}
 
         </div>
     </div>

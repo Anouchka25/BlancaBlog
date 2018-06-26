@@ -26,11 +26,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class BlogPostController extends Controller
 {
     /**
-     * @Route("/", name="post_index", methods="GET")
+     * @Route("/", defaults={"page": "1"}, name="post_index", methods="GET")
+     * @Route("/page/{page}", requirements={"page": "[1-9]\d*"}, name="blog_index_paginated")
      */
-    public function index(PostRepository $postRepository): Response
+    public function index(int $page, PostRepository $posts): Response
     {
-        return $this->render('post/index.html.twig', ['posts' => $postRepository->findAll()]);
+        $latestPosts = $posts->findLatest($page);
+        return $this->render('post/index.html.twig', ['posts' => $latestPosts]);
     }
 
 

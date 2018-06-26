@@ -133,6 +133,10 @@ class User implements UserInterface, \Serializable
         return array_unique($roles);
     }
 
+    function addRole($role) {
+        $this->roles[] = $role;
+    }
+
     public function setRoles(array $roles): void
     {
         $this->roles = $roles;

@@ -3,7 +3,11 @@
 {% block title %}Adminitration{% endblock %}
 
 {% block body %}
-    <h1>Adminitration du blog</h1>
+    {% include 'admin/header.html.twig' %}
+
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
 
     <table class="table">
         <thead>
@@ -12,7 +16,6 @@
                 <th>Title</th>
                 <th>Slug</th>
                 <th>Summary</th>
-                <th>Content</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,11 +26,10 @@
                 <td>{{ post.title }}</td>
                 <td>{{ post.slug }}</td>
                 <td>{{ post.summary }}</td>
-                <td>{{ post.content }}</td>
                 <td>
-                    <a href="{{ path('post_show', {slug: post.slug}) }}">show</a>
-                    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
-                    <a href="{{ path('post_delete', {'id': post.id}) }}">delete</a>
+                    <a href="{{ path('admin_post_show', {id: post.id}) }}">{{ 'action.show'|trans }}</a>
+                    <a href="{{ path('post_edit', {id: post.id}) }}">edit</a>
+                    <a href="{{ path('post_delete', {id: post.id}) }}">delete</a>
                 </td>
             </tr>
         {% else %}
@@ -41,4 +43,8 @@
 
 
     <a href="{{ path('admin_post_new') }}">Create new</a>
+
+    </div>
+    </div>
+    </div>
 {% endblock %}
