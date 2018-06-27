@@ -147,7 +147,7 @@ class Post
         $this->publishedAt = new \DateTime();
         $this->comments = new ArrayCollection();
         $this->tags = new ArrayCollection();
-        $this->image = new UploadedFile();
+        //$this->image = new UploadedFile();
     }
 
     public function getId(): int
