@@ -19,13 +19,12 @@ services:
                 $locales: '%app_locales%'
                 #$defaultLocale: '%locale%'
                 #$emailSender: '%app.notifications.email_sender%'
-    app.image_uploader:
-          class: App\FileUpload\ImageUpload
-          arguments: ['%images_directory%']
 
-    app.doctrine_image_upload_listener:
-          class: App\EventListener\ImageUploadListener
-          arguments: ['@app.image_uploader']
+    App\FileUpload\ImageUpload:
+          arguments:
+               $targetDirectory: '%images_directory%'
+
+    App\EventListener\ImageUploadListener:
           tags:
                - { name: doctrine.event_listener, event: prePersist }
                - { name: doctrine.event_listener, event: preUpdate }
