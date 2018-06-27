@@ -2,80 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ac0cff3-6525-49cb-bbc4-26809c1e06e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/EventListener/ImageUploadListener.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FileUpload/ImageUpload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/header.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error500.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/form/fields.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/form/layout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/post/menu_post.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.ca.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.cs.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.de.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.en.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.es.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.fr.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.hr.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.id.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.it.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.ja.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.nl.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.pl.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.pt_BR.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.ro.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.ru.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.sl.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.uk.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.zh_CN.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.ca.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.cs.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.de.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.en.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.es.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.fr.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.hr.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.id.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.it.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.ja.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.nl.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.pl.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.pt_BR.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.ro.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.ru.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.sl.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.uk.xlf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/validators.zh_CN.xlf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyTopBlog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyTopBlog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/BlogPostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/BlogPostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BlogPostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogPostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PostType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PostType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PostRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/comment_form_error.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/comment_form_error.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BlogPostController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlogPostController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Admin/BlogPostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="850">
+              <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
               <folding>
                 <element signature="e#40#60#0#PHP" expanded="true" />
               </folding>
@@ -105,23 +33,17 @@
       <file leaf-file-name="BlogPostController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/BlogPostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1130">
-              <caret line="108" column="11" selection-start-line="108" selection-start-column="11" selection-end-line="108" selection-end-column="11" />
-              <folding>
-                <element signature="e#34#57#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-663">
+              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Post.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entity/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-              <folding>
-                <element signature="e#261#309#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -225,12 +147,12 @@
         <option value="$PROJECT_DIR$/templates/admin/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Post.php" />
         <option value="$PROJECT_DIR$/src/Form/PostType.php" />
         <option value="$PROJECT_DIR$/src/EventSubscriber/ImageUploadListener.php" />
         <option value="$PROJECT_DIR$/src/FileUpload/ImageUpload.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/Admin/BlogPostController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Post.php" />
       </list>
     </option>
   </component>
@@ -423,6 +345,12 @@
               <item name="MyTopBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyTopBlog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyTopBlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyTopBlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="EventListener" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -529,12 +457,12 @@
       <updated>1529003435719</updated>
       <workItem from="1529003437376" duration="66752000" />
       <workItem from="1529783795316" duration="596000" />
-      <workItem from="1529870965147" duration="53157000" />
+      <workItem from="1529870965147" duration="55064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120505000" />
+    <option name="totallyTimeSpent" value="122412000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -842,16 +770,6 @@
     <entry file="file://$PROJECT_DIR$/src/Entity/Comment.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-          <folding>
-            <element signature="e#261#309#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/PostType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -879,16 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/BlogPostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1130">
-          <caret line="108" column="11" selection-start-line="108" selection-start-column="11" selection-end-line="108" selection-end-column="11" />
-          <folding>
-            <element signature="e#34#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/post/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -910,13 +818,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/BlogPostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-663">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Admin/BlogPostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="850">
+          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
           <folding>
             <element signature="e#40#60#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
         </state>
       </provider>
     </entry>
