@@ -30,7 +30,10 @@ class PostType extends AbstractType
             ->add('publishedAt', DateTimePickerType::class, [
                 'label' => 'label.published_at',
             ])
-            ->add('image', FileType::class, array('label' => 'Image(JPG)'))
+            ->add('image', FileType::class, [
+                'label' => 'Image(JPG)',
+                'data_class' => null,
+                'required' => false])
             ->add('tags', TagsInputType::class, [
                 'label' => 'label.tags',
                 'required' => false,

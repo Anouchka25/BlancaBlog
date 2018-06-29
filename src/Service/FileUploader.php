@@ -1,16 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Anouchka
- * Date: 26/06/2018
- * Time: 12:58
- */
-
-namespace App\FileUpload;
+namespace App\Service;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class ImageUpload
+class FileUploader
 {
     private $targetDirectory;
 

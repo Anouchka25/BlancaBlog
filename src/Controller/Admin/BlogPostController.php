@@ -14,7 +14,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use App\FileUpload\ImageUpload;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use App\Service\FileUploader;
 
 /**
  * @Route("/admin")
@@ -42,8 +44,11 @@ class BlogPostController extends Controller
 
     /**
      * @Route("/new", name="admin_post_new", methods="GET|POST")
+     * @param Request $request
+     * @param ImageUpload $imageUpload
+     * @return Response
      */
-    public function new(Request $request, ImageUpload $imageUpload): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $post = new Post();
         $post->setAuthor($this->getUser());
@@ -57,10 +62,10 @@ class BlogPostController extends Controller
             $post->setSlug(Slugger::slugify($post->getTitle()));
 
             $file = $post->getImage();
-            $fileName = $imageUpload->upload($file);
+            $fileName = $fileUploader->upload($file);
 
             $post->setImage($fileName);
--
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();

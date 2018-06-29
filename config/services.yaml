@@ -20,15 +20,6 @@ services:
                 #$defaultLocale: '%locale%'
                 #$emailSender: '%app.notifications.email_sender%'
 
-    App\FileUpload\ImageUpload:
-          arguments:
-               $targetDirectory: '%images_directory%'
-
-    App\EventListener\ImageUploadListener:
-          tags:
-               - { name: doctrine.event_listener, event: prePersist }
-               - { name: doctrine.event_listener, event: preUpdate }
-
     twig.extension.intl:
             class: Twig_Extensions_Extension_Intl
             tags:
@@ -49,3 +40,6 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Service\FileUploader:
+        arguments:
+            $targetDirectory: '%images_directory%'

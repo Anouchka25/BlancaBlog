@@ -94,8 +94,8 @@ class Post
     /**
      * @ORM\Column(type="string")
      *
-     * @Assert\NotBlank(message="Ajouter une image jpg")
-     * @Assert\File(mimeTypes={ "image/jpeg" })
+     * @Assert\NotBlank(message="Ajouter une image png")
+     * @Assert\File(mimeTypes={ "image/png" })
      */
     private $image;
 
