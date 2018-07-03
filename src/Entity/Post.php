@@ -14,7 +14,6 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -40,7 +39,7 @@ class Post
      *
      * See https://symfony.com/doc/current/best_practices/configuration.html#constants-vs-configuration-options
      */
-    public const NUM_ITEMS = 5;
+    public const NUM_ITEMS = 3;
 
     /**
      * @var int
@@ -94,8 +93,8 @@ class Post
     /**
      * @ORM\Column(type="string")
      *
-     * @Assert\NotBlank(message="Ajouter une image jpg")
-     * @Assert\File(mimeTypes={ "image/jpeg" })
+     * @Assert\NotBlank(message="Ajouter une image png")
+     * @Assert\File(mimeTypes={ "image/png" })
      */
     private $image;
 
@@ -110,6 +109,7 @@ class Post
 
         return $this;
     }
+
 
     /**
      * @var User

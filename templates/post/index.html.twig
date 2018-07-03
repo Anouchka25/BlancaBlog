@@ -1,37 +1,61 @@
 {% extends "base.html.twig" %}
 {% block body %}
-    {% include 'post/header.html.twig' %}
-<div class="container">
+    {% include 'slider/slider.html.twig' %}
+
+<div class="container single-page">
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+<div class="col-12 col-lg-9">
+    {% for post in posts %}
+    <div class="content-wrap">
+        <header class="entry-header">
+            <div class="posted-date">
+                {{ post.publishedAt|localizeddate('medium', 'short', null, 'UTC') }}
+            </div><!-- .posted-date -->
 
-            {% for post in posts %}
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        <a href="{{ path('post_show', {slug: post.slug}) }}">{{ post.title }}</a>
-                    </h2>
-                    <p class="post-subtitle">
-                        {{ post.summary|md2html }}
-                    </p>
-                </a>
-                <p class="post-meta">Posted by
-                    <a href="{{ path('user_show', {'id': post.author.id}) }}">{{ post.author.fullName }}</a>
-                    le {{ post.publishedAt|localizeddate('medium', 'short', null, 'UTC') }}
-            </div>
-            <hr>
-            {% else %}
-                <div class="well">{{ 'post.no_posts_found'|trans }}</div>
-            {% endfor %}
+            <h2 class="entry-title"><a href="{{ path('post_show', {slug: post.slug}) }}">{{ post.title }}</a></h2>
 
-                {% if posts.haveToPaginate %}
-                    <div class="navigation text-center clearfix">
-                        {{ pagerfanta(posts, 'twitter_bootstrap3_translated', {routeName: 'blog_index_paginated'}) }}
-                    </div>
-                {% endif %}
+            {{ include('post/_post_tags.html.twig') }}
+        </header><!-- .entry-header -->
 
-        </div>
+        <figure class="featured-image">
+            <img src="{{ asset('uploads/images/' ~ post.image) }}" alt="">
+        </figure><!-- .featured-image -->
+
+        <div class="entry-content">
+            <p>{{ post.summary|md2html }}</p>
+        </div><!-- .entry-content -->
+
+        <footer class="entry-footer flex flex-column flex-lg-row justify-content-between align-content-start align-lg-items-center">
+            <ul class="post-share flex align-items-center order-3 order-lg-1">
+                <label>Share</label>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul><!-- .post-share -->
+
+            <a class="read-more order-2" href="{{ path('post_show', {'slug': post.slug}) }}">Read more</a>
+
+            <div class="comments-count order-1 order-lg-3">
+                <a href="#">2 Comments</a>
+            </div><!-- .comments-count -->
+        </footer><!-- .entry-footer -->
+    </div><!-- .content-wrap -->
+    {% else %}
+        <div class="well">{{ 'post.no_posts_found'|trans }}</div>
+    {% endfor %}
+
+    <div class="pagination">
+        <ul class="flex align-items-center">
+            <li class="active"><a href="#">01.</a></li>
+            <li><a href="#">02.</a></li>
+            <li><a href="#">03.</a></li>
+        </ul>
     </div>
-</div>
-{% endblock %}
+</div><!-- .col -->
+{% include 'post/sidebar.html.twig' %}
 
+    </div><!-- .container -->
+</div><!-- .outer-container -->
+{% endblock %}

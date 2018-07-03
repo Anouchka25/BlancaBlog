@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="Anouchka MINKOUE OBAME">
-        <title>{% block title %}Welcome to Clean Blog!{% endblock %}</title>
-        {% block stylesheets %}
+<html lang="en">
+<head>
+    <title>{% block title %}Welcome to Blanca!{% endblock %}</title>
 
-            <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block stylesheets %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
+
+        <!-- FontAwesome CSS -->
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css" rel="stylesheet">
+
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}" type="text/css" rel="stylesheet">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('style.css') }}" type="text/css" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+<div class="outer-container">
+
+    {% include 'post/header.html.twig' %}
 
 
-            <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" type="text/css" rel="stylesheet">
-            <link href='//https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-            <link href='//https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+			{% block body %}{% endblock %}
 
 
-            <link href="{{ asset('css/clean-blog.min.css') }}" type="text/css" rel="stylesheet">
-        {% endblock %}
-    </head>
-    <body>
-        {% include 'post/menu.html.twig' %}
 
+    {% include 'footer/footer.html.twig' %}
 
-        {% block body %}{% endblock %}
-
-        {% include 'post/footer.html.twig' %}
-        {% block javascripts %}
-            <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-            <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-            <script src="{{ asset('js/clean-blog.min.js') }}"></script>
-        {% endblock %}
-    </body>
+    {% block javascripts %}
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/swiper.min.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+    {% endblock %}
+</body>
 </html>
