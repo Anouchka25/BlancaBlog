@@ -1,4 +1,4 @@
-<header class="masthead" style="background-image: url('buil/images/post-bg.jpg')">
+<header class="masthead" style="background-image: url({{ asset('uploads/images/{{ post.image }}') }}">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -8,7 +8,7 @@
                     <h2 class="subheading">{{ post.summary|md2html }}</h2>
                     <span class="meta">Posted by
                 <a href="#">{{ post.author.fullName }}</a>
-                on August 24, 2018</span>
+                        {{ post.publishedAt|localizeddate('medium', 'short', null, 'UTC') }}</span>
                 </div>
             </div>
         </div>

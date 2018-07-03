@@ -45,6 +45,10 @@ class BlogPostController extends Controller
     /**
      * @Route("/new", name="admin_post_new", methods="GET|POST")
      * @param Request $request
+<<<<<<< HEAD
+=======
+     * @param ImageUpload $imageUpload
+>>>>>>> origin/master
      * @return Response
      */
     public function new(Request $request, FileUploader $fileUploader): Response
